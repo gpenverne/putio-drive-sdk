@@ -1,0 +1,5 @@
+services:
+    putio.drive.controller:
+        class: Gpenverne\\PutioDriveBundle\\Controller\\PutioController
+        arguments:
+            - "@dispatcher"
