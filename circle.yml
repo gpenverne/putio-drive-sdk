@@ -1,0 +1,12 @@
+machine:
+    environment:
+        SYMFONY_ENV: test
+
+dependencies:
+    cache_directories:
+        - vendor
+
+test:
+    override:
+        - composer validate
+        - php vendor/phpspec/phpspec/bin/phpspec run -fpretty --no-interaction
