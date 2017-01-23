@@ -21,13 +21,14 @@
         "guzzlehttp/guzzle": "*"
     },
     "require-dev": {
-        "phpspec/phpspec": "^3.2"
+        "phpspec/phpspec": "^3.2",
+        "henrikbjorn/phpspec-code-coverage": "^3.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Gpenverne\\PutioDriveBundle\\": "",
+            "Gpenverne\\PutioDriveBundle\\": "src",
             "": "vendor/"
         }
     }
