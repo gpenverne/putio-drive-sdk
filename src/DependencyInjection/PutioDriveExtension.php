@@ -14,7 +14,7 @@ class PutioDriveExtension extends Extension
      * @param array            $configs
      * @param ContainerBuilder $container
      */
-    public function load($configs, ContainerBuilder $container)
+    public function load(array $configs, ContainerBuilder $container)
     {
         $loader = new YamlFileLoader(
             $container,
