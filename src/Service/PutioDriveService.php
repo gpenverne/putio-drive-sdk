@@ -13,7 +13,7 @@ class PutioDriveService
      *
      * @return $this
      */
-    public function setToken(string $token)
+    public function setToken($token)
     {
         $this->token = $token;
 

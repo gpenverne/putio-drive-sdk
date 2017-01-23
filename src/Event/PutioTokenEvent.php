@@ -16,7 +16,7 @@ class PutioTokenEvent extends GenericEvent
     /**
      * @param string $token
      */
-    public function __construct(string $token)
+    public function __construct($token)
     {
         parent::__construct($token);
         $this->token = $token;

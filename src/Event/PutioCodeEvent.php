@@ -16,7 +16,7 @@ class PutioCodeEvent extends GenericEvent
     /**
      * @param string $token
      */
-    public function __construct(string $code)
+    public function __construct($code)
     {
         parent::__construct($code);
         $this->code = $code;

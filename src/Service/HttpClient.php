@@ -8,7 +8,7 @@ class HttpClient
      * @param  string $url
      * @return string
      */
-    public function get(string $url)
+    public function get($url)
     {
         return file_get_contents($url);
     }
@@ -18,7 +18,7 @@ class HttpClient
      *
      * @return mixed
      */
-    public function getJson(string $url)
+    public function getJson($url)
     {
         return json_decode($this->get($url));
     }

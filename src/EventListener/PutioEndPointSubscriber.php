@@ -24,7 +24,7 @@ class PutioEndPointSubscriber
      */
     public function __construct(
         EventDispatcherInterface $dispatcher,
-        string $routeName
+        $routeName
     ) {
         $this->dispatcher = $dispatcher;
         $this->routeName = $routeName;
@@ -57,7 +57,7 @@ class PutioEndPointSubscriber
      *
      * @return PutioCodeEvent
      */
-    protected function dispatchEvent(string $code)
+    protected function dispatchEvent($code)
     {
         $event = new PutioCodeEvent($code);
         $this->dispatcher->dispatch(PutioCodeEvent::EVENT_NAME, $event);

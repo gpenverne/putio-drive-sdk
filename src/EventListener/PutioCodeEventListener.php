@@ -60,7 +60,7 @@ class PutioCodeEventListener
      *
      * @return PutioTokenEvent
      */
-    public function getToken(string $code)
+    public function getToken($code)
     {
         $url = $this->urlGenerator->getTokenUrl($code);
         $data = $this->httpClient->getJson($url);
@@ -77,7 +77,7 @@ class PutioCodeEventListener
      *
      * @return PutioCodeEvent
      */
-    protected function dispatchEvent(string $token)
+    protected function dispatchEvent($token)
     {
         $event = new PutioTokenEvent($token);
         $this->dispatcher->dispatch(PutioTokenEvent::EVENT_NAME, $event);
