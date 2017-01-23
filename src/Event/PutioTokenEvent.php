@@ -25,7 +25,7 @@ class PutioTokenEvent extends GenericEvent
     /**
      * @return string
      */
-    public function getToken(): string
+    public function getToken()
     {
         return $this->token;
     }

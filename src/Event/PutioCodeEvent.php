@@ -25,7 +25,7 @@ class PutioCodeEvent extends GenericEvent
     /**
      * @return string
      */
-    public function getCode(): string
+    public function getCode()
     {
         return $this->code;
     }
