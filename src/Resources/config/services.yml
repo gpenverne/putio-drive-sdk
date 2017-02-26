@@ -48,6 +48,6 @@ services:
 
     # -- external
     psr_cloud_files.factory.folder:
-        class: Gpenverne\PsrCloudFiles\Factory\FolderFactory
+        class: Gpenverne\PsrCloudFiles\Factories\FolderFactory
     psr_cloud_files.factory.file:
-        class: Gpenverne\PsrCloudFiles\Factory\FileFactory
+        class: Gpenverne\PsrCloudFiles\Factories\FileFactory
