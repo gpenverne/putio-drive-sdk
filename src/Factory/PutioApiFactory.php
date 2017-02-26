@@ -22,7 +22,7 @@ class PutioApiFactory
      */
     public function getApiClient($token = null)
     {
-        return $this->createApiClient($token ?? $this->getToken());
+        return $this->createApiClient($token ? $token : $this->getToken());
     }
 
     /**
