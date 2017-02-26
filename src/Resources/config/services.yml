@@ -1,7 +1,7 @@
 services:
     # --- controller
     putio.drive.controller:
-        class: Gpenverne\\PutioDriveBundle\\Controller\\PutioController
+        class: Gpenverne\PutioDriveBundle\Controller\PutioController
         arguments:
             - "@putio.drive.url_generator"
             - "@putio.drive"
@@ -15,22 +15,22 @@ services:
 
     # -- utils
     putio.drive.http_client:
-        class: Gpenverne\\PutioDriveBundle\\Service\\HttpClient
+        class: Gpenverne\PutioDriveBundle\Service\HttpClient
     putio.drive.url_generator:
-        class: Gpenverne\\PutioDriveBundle\\Service\\UrlGenerator
+        class: Gpenverne\PutioDriveBundle\Service\UrlGenerator
         parameters:
             - "@router"
             - "%putio%"
 
     # --- listeners
     putio.drive.listener.code:
-        class: Gpenverne\\PutioDriveBundle\\EventListener\\PutioCodeEventListener
+        class: Gpenverne\PutioDriveBundle\EventListener\PutioCodeEventListener
         parameters:
             - "@putio.drive"
         tags:
             - { name: kernel.event_listener, event: events.putio.code, method: onCodeObtained, priority: 0 }
     putio.drive.listener.token:
-        class: Gpenverne\\PutioDriveBundle\\EventListener\\PutioTokenEventListener
+        class: Gpenverne\PutioDriveBundle\EventListener\PutioTokenEventListener
         parameters:
             - "@putio.drive"
         tags:
@@ -38,7 +38,7 @@ services:
 
     # --- subscribers
     putio.drive.endpoint_listener:
-        class: Gpenverne\\PutioDriveBundle\\EventListener\\PutioEndPointSubscriber
+        class: Gpenverne\PutioDriveBundle\EventListener\PutioEndPointSubscriber
         parameters:
             - "@dispatcher"
             - "%putio.callback_route%"
