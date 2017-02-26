@@ -40,7 +40,7 @@ services:
     putio.drive.endpoint_listener:
         class: Gpenverne\PutioDriveBundle\EventListener\PutioEndPointSubscriber
         parameters:
-            - "@dispatcher"
+            - "@event_dispatcher"
             - "%putio.callback_route%"
         tags:
             - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest, priority: 0 }
