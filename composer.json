@@ -13,13 +13,12 @@
     },
     "require": {
         "php": ">=5.4",
-        "symfony/framework-bundle": "3.2.*",
+        "symfony/framework-bundle": "*",
         "symfony/http-kernel": "*",
         "symfony/config": "*",
         "symfony/class-loader": "*",
         "symfony/dependency-injection": "*",
-        "guzzlehttp/guzzle": "*",
-        "nicoswd/putio": "^0.3.1"
+        "nicoswd/putio": "*"
     },
     "require-dev": {
         "phpspec/phpspec": "^3.2",
