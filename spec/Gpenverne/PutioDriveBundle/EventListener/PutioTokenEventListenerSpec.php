@@ -5,12 +5,13 @@ namespace spec\Gpenverne\PutioDriveBundle\EventListener;
 use Gpenverne\PutioDriveBundle\Event\PutioTokenEvent;
 use Gpenverne\PutioDriveBundle\Service\PutioDriveService;
 use Gpenverne\PutioDriveBundle\EventListener\PutioTokenEventListener;
+use Gpenverne\PutioDriveBundle\Factory\PutioApiFactory;
 use PhpSpec\ObjectBehavior;
 
 class PutioTokenEventListenerSpec extends ObjectBehavior
 {
     public function let(
-        PutioDriveService $putioDriveService,
+        PutioApiFactory $putioDriveService,
 
         PutioTokenEvent $event
     ) {

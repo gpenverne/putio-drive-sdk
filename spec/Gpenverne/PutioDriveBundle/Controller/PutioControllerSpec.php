@@ -14,15 +14,17 @@ use Gpenverne\PutioDriveBundle\Exception\NoCodeException;
 use Gpenverne\PutioDriveBundle\Exception\NoTokenFoundException;
 use Gpenverne\PutioDriveBundle\Service\HttpClient;
 use Gpenverne\PutioDriveBundle\Service\UrlGenerator;
+use Gpenverne\PutioDriveBundle\Factory\PutioApiFactory;
 
 class PutioControllerSpec extends ObjectBehavior
 {
     public function let(
-        UrlGenerator $urlGenerator
+        UrlGenerator $urlGenerator,
+        PutioApiFactory $putioDrive
     ) {
         $urlGenerator->getRedirectUrl()->willReturn('some-url');
 
-        $this->beConstructedWith($urlGenerator);
+        $this->beConstructedWith($urlGenerator, $putioDrive);
     }
 
     public function it_is_initializable()

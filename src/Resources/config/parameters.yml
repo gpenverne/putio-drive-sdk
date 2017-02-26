@@ -2,4 +2,4 @@ parameters:
     putio:
         client_id: your-client-id
         client_secret: your-client-secret
-        callback_route: callback_route
+        callback_route: putio.callback
