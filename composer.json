@@ -18,7 +18,8 @@
         "symfony/config": "*",
         "symfony/class-loader": "*",
         "symfony/dependency-injection": "*",
-        "nicoswd/putio": "*"
+        "nicoswd/putio": "*",
+        "gpenverne/psr-cloud-files": "dev-master"
     },
     "require-dev": {
         "phpspec/phpspec": "^3.2",

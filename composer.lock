@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "67eeb8f09e735dedf496804133e8ca11",
-    "content-hash": "60bda7e112f831f2625dc2822edfe42c",
+    "hash": "e2062399b605cf5b1a1867883f8144f4",
+    "content-hash": "032533d88f8f8ba1eb016ab733f9c07f",
     "packages": [
         {
             "name": "doctrine/cache",
@@ -76,6 +76,51 @@
                 "caching"
             ],
             "time": "2016-10-29 11:16:17"
+        },
+        {
+            "name": "gpenverne/psr-cloud-files",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gpenverne/psr-cloud-file.git",
+                "reference": "21d742efc1583dccc24b73644079c70e9bd086a6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gpenverne/psr-cloud-file/zipball/21d742efc1583dccc24b73644079c70e9bd086a6",
+                "reference": "21d742efc1583dccc24b73644079c70e9bd086a6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.0",
+                "henrikbjorn/phpspec-code-coverage": "^3.0",
+                "phpspec/phpspec": "^3.2"
+            },
+            "type": "bundle",
+            "autoload": {
+                "psr-4": {
+                    "Gpenverne\\PsrCloudFiles\\": "src",
+                    "": "vendor/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gpenverne",
+                    "homepage": "https://github.com/gpenverne"
+                }
+            ],
+            "description": "Interfaces and models for cloud files",
+            "keywords": [
+                "cloud"
+            ],
+            "time": "2017-02-26 15:33:56"
         },
         {
             "name": "nicoswd/putio",
@@ -2655,7 +2700,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "gpenverne/psr-cloud-files": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
