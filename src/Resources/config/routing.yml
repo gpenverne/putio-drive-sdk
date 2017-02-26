@@ -1,7 +1,6 @@
-putio:
-    callback:
-        path:     /putio/callback
-        defaults: { _controller: putio.drive.controller:callbackAction }
-    redirect:
-        path:     /putio/redirect
-        defaults: { _controller: putio.drive.controller:redirectAction }
+putio.callback:
+    path:     /putio/callback
+    defaults: { _controller: putio.drive.controller:callbackAction }
+putio.redirect:
+    path:     /putio/redirect
+    defaults: { _controller: putio.drive.controller:redirectAction }
