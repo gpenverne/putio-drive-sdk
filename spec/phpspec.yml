@@ -1,0 +1,13 @@
+suites:
+    putio_drive_bundle:
+        namespace: Gpenverne\PutioDriveBundle
+        spec_prefix: spec
+        psr4_prefix:
+        src_path: %paths.config%/../src/
+        spec_path: %paths.config%/../
+extensions:
+    PhpSpecCodeCoverage\CodeCoverageExtension:
+        format:
+          - html
+        output:
+          html: coverage
