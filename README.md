@@ -1,6 +1,11 @@
 # putio-drive-sdk
 
 ## Installation
+Install the bundle:
+```bash
+$ composer require gpenverne/putio-drive-sdk
+```
+
 Load bunle in AppKernel:
 ```php
     new Gpenverne\PutioDriveBundle\PutioDriveBundle(),
