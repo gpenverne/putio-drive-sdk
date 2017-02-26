@@ -2,7 +2,7 @@
 
 ## Installation
 Load bunle in AppKernel:
-``php
+```php
     new Gpenverne\PutioDriveBundle\PutioDriveBundle(),
 ```
 
@@ -23,7 +23,7 @@ After access granted, user will be redirected to "callback_route"
 ### retrieving the token
 Once token obtained, "events.putio.token" event is dispatched.  
 This event is handled by putio drive service, and you can retrieve it using putio.drive service:
-``php
+```php
 // In a controller:
 $token = $this->container->get('putio.drive')->getToken();
 ```
