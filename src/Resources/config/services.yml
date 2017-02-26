@@ -9,6 +9,9 @@ services:
     # -- factory
     putio.drive:
         class: Gpenverne\PutioDriveBundle\Factory\PutioApiFactory
+        arguments:
+            - "@psr_cloud_files.factory.folder"
+            - "@psr_cloud_files.factory.file"
 
     # -- utils
     putio.drive.http_client:
@@ -41,3 +44,10 @@ services:
             - "%putio.callback_route%"
         tags:
             - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest, priority: 0 }
+
+
+    # -- external
+    psr_cloud_files.factory.folder:
+        class: Gpenverne\PsrCloudFiles\Factory\FolderFactory
+    psr_cloud_files.factory.file:
+        class: Gpenverne\PsrCloudFiles\Factory\FileFactory

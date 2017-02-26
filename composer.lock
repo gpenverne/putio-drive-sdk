@@ -83,12 +83,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/gpenverne/psr-cloud-file.git",
-                "reference": "21d742efc1583dccc24b73644079c70e9bd086a6"
+                "reference": "290c77ea39b1fd8b1c8f55303d17cca6ebd83712"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gpenverne/psr-cloud-file/zipball/21d742efc1583dccc24b73644079c70e9bd086a6",
-                "reference": "21d742efc1583dccc24b73644079c70e9bd086a6",
+                "url": "https://api.github.com/repos/gpenverne/psr-cloud-file/zipball/290c77ea39b1fd8b1c8f55303d17cca6ebd83712",
+                "reference": "290c77ea39b1fd8b1c8f55303d17cca6ebd83712",
                 "shasum": ""
             },
             "require": {
@@ -120,7 +120,7 @@
             "keywords": [
                 "cloud"
             ],
-            "time": "2017-02-26 15:33:56"
+            "time": "2017-02-26 18:18:14"
         },
         {
             "name": "nicoswd/putio",

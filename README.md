@@ -34,6 +34,29 @@ $token = $this->container->get('putio.drive')->getToken();
 ```
 
 ### using the putio php sdk
+You can use our builtin file/folder finder:
+```php
+$putioDrive = $this->container->get('putio.drive');
+$putioDrive->setToken($token);
+
+// Retrieving a folder
+$folder = $putioDrive->findByPath('/MyMovies');
+
+// Retrieving files in the folder
+// Will return FileInterface and FolderInterface
+// cf. (psr-cloud-files)[https://packagist.org/packages/gpenverne/psr-cloud-files]
+$files = $folder->getFiles();
+
+// Or retrieve a full path file
+// Will return FileInterface
+// cf. (psr-cloud-files)[https://packagist.org/packages/gpenverne/psr-cloud-files]
+$file = $putioDrive->findByPath('/MyMovies/MyMovie.mp4');
+
+// Retrieving the download url:
+$file = $putioDrive->findByPath('/MyMovies/MyMovie.mp4');
+$downloadUrl = $file->getLink();
+```
+
 Thanks to [https://github.com/nicoSWD/put.io-api-v2](https://github.com/nicoSWD/put.io-api-v2), you can easily make api calls:
 ```php
 // In a controller, using the previous catched token:
