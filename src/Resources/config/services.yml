@@ -27,6 +27,8 @@ services:
         class: Gpenverne\PutioDriveBundle\EventListener\PutioCodeEventListener
         arguments:
             - "@putio.drive"
+            - "@putio.drive.url_generator"
+            - "@putio.drive.http_client"
         tags:
             - { name: kernel.event_listener, event: events.putio.code, method: onCodeObtained, priority: 0 }
     putio.drive.listener.token:
@@ -44,7 +46,6 @@ services:
             - "%putio.callback_route%"
         tags:
             - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest, priority: 0 }
-
 
     # -- external
     psr_cloud_files.factory.folder:

@@ -5,7 +5,8 @@ namespace Gpenverne\PutioDriveBundle\Service;
 class HttpClient
 {
     /**
-     * @param  string $url
+     * @param string $url
+     *
      * @return string
      */
     public function get($url)
@@ -14,7 +15,7 @@ class HttpClient
     }
 
     /**
-     * @param  string $url
+     * @param string $url
      *
      * @return mixed
      */

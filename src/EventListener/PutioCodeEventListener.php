@@ -4,11 +4,9 @@ namespace Gpenverne\PutioDriveBundle\EventListener;
 
 use Gpenverne\PutioDriveBundle\Event\PutioCodeEvent;
 use Gpenverne\PutioDriveBundle\Event\PutioTokenEvent;
-use Gpenverne\PutioDriveBundle\Service\PutioDriveService;
+use Gpenverne\PutioDriveBundle\Exception\NoTokenFoundException;
 use Gpenverne\PutioDriveBundle\Service\HttpClient;
 use Gpenverne\PutioDriveBundle\Service\UrlGenerator;
-use Gpenverne\PutioDriveBundle\Exception\NoCodeException;
-use Gpenverne\PutioDriveBundle\Exception\NoTokenFoundException;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class PutioCodeEventListener
@@ -42,7 +40,8 @@ class PutioCodeEventListener
     }
 
     /**
-     * @param  PutioEvent $event
+     * @param PutioEvent $event
+     *
      * @return $event
      */
     public function onCodeObtained(PutioCodeEvent $event)
@@ -54,7 +53,7 @@ class PutioCodeEventListener
     }
 
     /**
-     * @param  string $code
+     * @param string $code
      *
      * @throws NoTokenFoundException
      *
@@ -73,7 +72,7 @@ class PutioCodeEventListener
     }
 
     /**
-     * @param  string $token
+     * @param string $token
      *
      * @return PutioCodeEvent
      */

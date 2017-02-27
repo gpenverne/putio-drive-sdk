@@ -2,16 +2,16 @@
 
 namespace Gpenverne\PutioDriveBundle\EventListener;
 
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Symfony\Component\HttpKernel\Event\GetResponseEvent;
-use Symfony\Component\HttpFoundation\Request;
 use Gpenverne\PutioDriveBundle\Event\PutioCodeEvent;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 
 class PutioEndPointSubscriber
 {
     /**
-     * @var EventDispatcherInterface
-     */
+      * @var EventDispatcherInterface
+      */
      protected $dispatcher;
 
      /**
@@ -21,6 +21,7 @@ class PutioEndPointSubscriber
 
     /**
      * @param EventDispatcherInterface $dispatcher
+     * @param string                   $routeName
      */
     public function __construct(
         EventDispatcherInterface $dispatcher,
@@ -41,7 +42,7 @@ class PutioEndPointSubscriber
     }
 
     /**
-     * @param  Request $request
+     * @param Request $request
      *
      * @return bool
      */
@@ -53,7 +54,7 @@ class PutioEndPointSubscriber
     }
 
     /**
-     * @param  string $code
+     * @param string $code
      *
      * @return PutioCodeEvent
      */
