@@ -26,7 +26,7 @@ services:
     putio.drive.listener.code:
         class: Gpenverne\PutioDriveBundle\EventListener\PutioCodeEventListener
         arguments:
-            - "@putio.drive"
+            - "@event_dispatcher"
             - "@putio.drive.url_generator"
             - "@putio.drive.http_client"
         tags:
