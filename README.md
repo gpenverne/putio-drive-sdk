@@ -21,6 +21,19 @@ parameters:
 ```
 With your custom route in callback_route (for example, to display a success message)
 
+Add your endpoints or use our controllers endpoints:
+```
+putio.callback:
+    path:     /putio/callback
+    defaults: { _controller: putio.drive.controller:callbackAction }
+
+putio.redirect:
+    path:     /putio/redirect
+    defaults: { _controller: putio.drive.controller:redirectAction }
+```
+
+
+
 ### obtain the user token
 Use the route: "putio.redirect"  
 After access granted, user will be redirected to "callback_route"
