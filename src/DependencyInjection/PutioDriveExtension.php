@@ -21,6 +21,5 @@ class PutioDriveExtension extends Extension
         );
         $loader->load('parameters.yml');
         $loader->load('services.yml');
-        $loader->load('routing.yml');
     }
 }

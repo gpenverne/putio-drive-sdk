@@ -1,4 +1,4 @@
 parameters:
     putio.client_id: your-client-id
     putio.client_secret: your-client-secret
-    putio.callback_route: "putio.callback"
+    putio.callback_route: "putio_drive_sdk.callback"
