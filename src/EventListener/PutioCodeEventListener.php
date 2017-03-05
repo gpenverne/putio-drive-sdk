@@ -64,11 +64,11 @@ class PutioCodeEventListener
         $url = $this->urlGenerator->getTokenUrl($code);
         $data = $this->httpClient->getJson($url);
 
-        if (null === $data || !is_object($data) || !isset($data->token)) {
+        if (null === $data || !is_object($data) || !isset($data->access_token)) {
             throw new NoTokenFoundException();
         }
 
-        return $data->token;
+        return $data->access_token;
     }
 
     /**

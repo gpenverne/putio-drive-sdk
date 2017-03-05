@@ -1,4 +1,5 @@
 <?php
+
 namespace spec\Gpenverne\PutioDriveBundle\Exception;
 
 use Gpenverne\PutioDriveBundle\Exception\NoCodeException;

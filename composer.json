@@ -23,7 +23,8 @@
     },
     "require-dev": {
         "phpspec/phpspec": "^3.2",
-        "henrikbjorn/phpspec-code-coverage": "^3.0"
+        "henrikbjorn/phpspec-code-coverage": "^3.0",
+        "friendsofphp/php-cs-fixer": "*"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

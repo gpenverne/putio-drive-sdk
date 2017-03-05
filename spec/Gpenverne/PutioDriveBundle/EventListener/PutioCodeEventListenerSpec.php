@@ -2,17 +2,14 @@
 
 namespace spec\Gpenverne\PutioDriveBundle\EventListener;
 
-use Gpenverne\PutioDriveBundle\Event\PutioTokenEvent;
 use Gpenverne\PutioDriveBundle\Event\PutioCodeEvent;
-use Gpenverne\PutioDriveBundle\EventListener;
-use Gpenverne\PutioDriveBundle\Service\PutioDriveService;
+use Gpenverne\PutioDriveBundle\Event\PutioTokenEvent;
+use Gpenverne\PutioDriveBundle\Exception\NoTokenFoundException;
 use Gpenverne\PutioDriveBundle\Service\HttpClient;
 use Gpenverne\PutioDriveBundle\Service\UrlGenerator;
-use Gpenverne\PutioDriveBundle\Exception\NoCodeException;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use PhpSpec\ObjectBehavior;
-use Gpenverne\PutioDriveBundle\Exception\NoTokenFoundException;
 use Prophecy\Argument;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class PutioCodeEventListenerSpec extends ObjectBehavior
 {
@@ -24,7 +21,7 @@ class PutioCodeEventListenerSpec extends ObjectBehavior
         PutioCodeEvent $event,
         \stdClass $tokenStd
     ) {
-        $tokenStd->token = 'a-token';
+        $tokenStd->access_token = 'a-token';
 
         $event->getCode()->willReturn('a-code');
         $urlGenerator->getTokenUrl('a-code')->willReturn('an-url');

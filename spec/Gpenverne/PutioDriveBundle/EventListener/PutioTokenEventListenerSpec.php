@@ -3,7 +3,6 @@
 namespace spec\Gpenverne\PutioDriveBundle\EventListener;
 
 use Gpenverne\PutioDriveBundle\Event\PutioTokenEvent;
-use Gpenverne\PutioDriveBundle\Service\PutioDriveService;
 use Gpenverne\PutioDriveBundle\EventListener\PutioTokenEventListener;
 use Gpenverne\PutioDriveBundle\Factory\PutioApiFactory;
 use PhpSpec\ObjectBehavior;

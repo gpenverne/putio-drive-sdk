@@ -2,10 +2,9 @@
 
 namespace spec\Gpenverne\PutioDriveBundle;
 
+use Gpenverne\PutioDriveBundle\DependencyInjection\PutioDriveExtension;
 use Gpenverne\PutioDriveBundle\PutioDriveBundle;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
-use Gpenverne\PutioDriveBundle\DependencyInjection\PutioDriveExtension;
 
 class PutioDriveBundleSpec extends ObjectBehavior
 {

@@ -2,9 +2,9 @@
 
 namespace spec\Gpenverne\PutioDriveBundle\Event;
 
-use Symfony\Component\EventDispatcher\GenericEvent;
 use Gpenverne\PutioDriveBundle\Event\PutioCodeEvent;
 use PhpSpec\ObjectBehavior;
+use Symfony\Component\EventDispatcher\GenericEvent;
 
 class PutioCodeEventSpec extends ObjectBehavior
 {
@@ -22,6 +22,7 @@ class PutioCodeEventSpec extends ObjectBehavior
     {
         $this->shouldHaveType(GenericEvent::class);
     }
+
     public function it_returns_a_code()
     {
         $this->getCode()->shouldReturn('a-code');

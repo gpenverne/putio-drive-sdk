@@ -2,8 +2,8 @@
 
 namespace spec\Gpenverne\PutioDriveBundle\Service;
 
-use PhpSpec\ObjectBehavior;
 use Gpenverne\PutioDriveBundle\Service\HttpClient;
+use PhpSpec\ObjectBehavior;
 
 class HttpClientSpec extends ObjectBehavior
 {

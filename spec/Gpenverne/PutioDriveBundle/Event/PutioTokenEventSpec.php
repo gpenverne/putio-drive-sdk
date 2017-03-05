@@ -2,9 +2,9 @@
 
 namespace spec\Gpenverne\PutioDriveBundle\Event;
 
-use Symfony\Component\EventDispatcher\GenericEvent;
 use Gpenverne\PutioDriveBundle\Event\PutioTokenEvent;
 use PhpSpec\ObjectBehavior;
+use Symfony\Component\EventDispatcher\GenericEvent;
 
 class PutioTokenEventSpec extends ObjectBehavior
 {
@@ -22,6 +22,7 @@ class PutioTokenEventSpec extends ObjectBehavior
     {
         $this->shouldHaveType(GenericEvent::class);
     }
+
     public function it_returns_a_token()
     {
         $this->getToken()->shouldReturn('a-token');

@@ -4,9 +4,8 @@ namespace spec\Gpenverne\PutioDriveBundle\DependencyInjection;
 
 use Gpenverne\PutioDriveBundle\DependencyInjection\PutioDriveExtension;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
-use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 class PutioDriveExtensionSpec extends ObjectBehavior
 {
