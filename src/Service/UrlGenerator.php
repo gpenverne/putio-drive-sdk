@@ -18,7 +18,7 @@ class UrlGenerator
     public function __construct(Router $router, $params)
     {
         $this->params = $params;
-        $this->params['redirect_uri'] = $router->generate($params['callback_route'], [], true);
+        $this->params['redirect_uri'] = $router->generate($params['callback_route'], [], Router::ABSOLUTE_URL);
     }
 
     /**
