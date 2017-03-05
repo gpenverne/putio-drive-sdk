@@ -50,6 +50,6 @@ class PutioController
             'token' => $this->putioDrive->getToken(),
         ];
 
-        return new JsonResponse(json_encode($data));
+        return new JsonResponse($data);
     }
 }

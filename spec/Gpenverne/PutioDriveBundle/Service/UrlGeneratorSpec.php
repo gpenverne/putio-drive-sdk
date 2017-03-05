@@ -2,7 +2,6 @@
 
 namespace spec\Gpenverne\PutioDriveBundle\Service;
 
-use Gpenverne\PutioDriveBundle\Service\UrlGenerator;
 use PhpSpec\ObjectBehavior;
 use Symfony\Component\Routing\Router;
 
@@ -10,7 +9,7 @@ class UrlGeneratorSpec extends ObjectBehavior
 {
     public function let(Router $router)
     {
-        $router->generate('a-callback-route', [], true)->willReturn('http://a-full-url');
+        $router->generate('a-callback-route', [], Router::ABSOLUTE_URL)->willReturn('http://a-full-url');
 
         $this->beConstructedWith($router, [
             'client_id' => 'a-client-id',

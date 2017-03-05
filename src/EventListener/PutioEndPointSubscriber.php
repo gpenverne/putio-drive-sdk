@@ -21,14 +21,14 @@ class PutioEndPointSubscriber
 
     /**
      * @param EventDispatcherInterface $dispatcher
-     * @param string                   $routeName
+     * @param array                    $params
      */
     public function __construct(
         EventDispatcherInterface $dispatcher,
-        $routeName
+        $params
     ) {
         $this->dispatcher = $dispatcher;
-        $this->routeName = $routeName;
+        $this->routeName = $params['callback_route'];
     }
 
     public function onKernelRequest(GetResponseEvent $event)
