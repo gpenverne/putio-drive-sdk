@@ -12,6 +12,8 @@ use PutIO\API;
 
 class PutioApiFactory extends Provider
 {
+    const PROVIDER_NAME = 'putio';
+
     /**
      * @var API
      */
@@ -95,6 +97,14 @@ class PutioApiFactory extends Provider
     public function getLink(FileInterface $file)
     {
         return $this->getApiClient()->files->getDownloadURL($file->getId());
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return self::PROVIDER_NAME;
     }
 
     /**
