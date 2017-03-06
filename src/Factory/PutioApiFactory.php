@@ -13,11 +13,6 @@ use PutIO\API;
 class PutioApiFactory extends Provider
 {
     /**
-     * @var string
-     */
-    private $token;
-
-    /**
      * @var API
      */
     private $api;
@@ -32,6 +27,10 @@ class PutioApiFactory extends Provider
      */
     private $folderFactory;
 
+    /**
+     * @param FolderFactory $folderFactory
+     * @param FileFactory   $fileFactory
+     */
     public function __construct(FolderFactory $folderFactory, FileFactory $fileFactory)
     {
         $this->folderFactory = $folderFactory;
