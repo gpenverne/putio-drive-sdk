@@ -3,15 +3,18 @@
 namespace spec\Gpenverne\PutioDriveBundle\Service;
 
 use PhpSpec\ObjectBehavior;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\Router;
 
 class UrlGeneratorSpec extends ObjectBehavior
 {
-    public function let(Router $router)
+    public function let(Router $router, RequestStack $requestStack, Request $request)
     {
+        $requestStack->getCurrentRequest()->willReturn($request);
         $router->generate('a-callback-route', [], Router::ABSOLUTE_URL)->willReturn('http://a-full-url');
 
-        $this->beConstructedWith($router, [
+        $this->beConstructedWith($router, $requestStack, [
             'client_id' => 'a-client-id',
             'client_secret' => 'a-client-secret',
             'callback_route' => 'a-callback-route',

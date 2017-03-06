@@ -2,6 +2,7 @@
 
 namespace Gpenverne\PutioDriveBundle\Service;
 
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\Router;
 
 class UrlGenerator
@@ -15,10 +16,18 @@ class UrlGenerator
      * @param Router $router
      * @param array  $params
      */
-    public function __construct(Router $router, $params)
+    public function __construct(Router $router, RequestStack $requestStack, $params)
     {
         $this->params = $params;
-        $this->params['redirect_uri'] = $router->generate($params['callback_route'], [], Router::ABSOLUTE_URL);
+        $request = $requestStack->getCurrentRequest();
+
+        if (null !== $request && null !== $request->query) {
+            $routeParams = $request->query->all();
+        } else {
+            $routeParams = [];
+        }
+
+        $this->params['redirect_uri'] = $router->generate($params['callback_route'], $routeParams, Router::ABSOLUTE_URL);
     }
 
     /**
