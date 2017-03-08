@@ -20,6 +20,7 @@ services:
         class: Gpenverne\PutioDriveBundle\Service\UrlGenerator
         arguments:
             - "@router"
+            - "@request_stack"
             - "%putio%"
 
     # --- listeners
