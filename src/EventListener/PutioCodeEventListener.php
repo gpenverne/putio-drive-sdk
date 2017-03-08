@@ -65,7 +65,12 @@ class PutioCodeEventListener
         $data = $this->httpClient->getJson($url);
 
         if (null === $data || !is_object($data) || !isset($data->access_token)) {
-            throw new NoTokenFoundException(json_encode($data));
+            $result = $data;
+            $debug = [
+                'last_url' => $url,
+                'result' => $data,
+            ];
+            throw new NoTokenFoundException(json_encode($debug));
         }
 
         return $data->access_token;
