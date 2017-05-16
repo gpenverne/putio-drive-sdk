@@ -7,6 +7,8 @@ use Symfony\Component\Routing\Router;
 
 class UrlGenerator
 {
+    const CODE_PARAMETER = 'code';
+
     /**
      * @var array
      */
@@ -22,6 +24,7 @@ class UrlGenerator
         $request = $requestStack->getCurrentRequest();
 
         if (null !== $request && null !== $request->query) {
+            $request->query->remove(self::CODE_PARAMETER);
             $routeParams = $request->query->all();
         } else {
             $routeParams = [];
@@ -45,8 +48,8 @@ class UrlGenerator
      */
     public function getTokenUrl($code)
     {
-        $url = 'https://api.put.io/v2/oauth2/access_token?client_id=%s&client_secret=%s&grant_type=authorization_code&redirect_uri=%s&code=%s';
+        $url = 'https://api.put.io/v2/oauth2/access_token?client_id=%s&client_secret=%s&grant_type=authorization_code&code=%s&redirect_uri=%s';
 
-        return sprintf($url, $this->params['client_id'], $this->params['client_secret'], urlencode($this->params['redirect_uri']), $code);
+        return sprintf($url, $this->params['client_id'], $this->params['client_secret'], $code, urlencode($this->params['redirect_uri']));
     }
 }

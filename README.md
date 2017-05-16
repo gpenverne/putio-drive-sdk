@@ -21,7 +21,7 @@ parameters:
 ```
 With your custom route in callback_route (for example, to display a success message)
 
-Add your endpoints or use our controllers endpoints:
+Add your endpoints to your routing.yml or use our controllers endpoints:
 ```
 putio.callback:
     path:     /putio/callback
@@ -35,8 +35,8 @@ putio.redirect:
 
 
 ### obtain the user token
-Use the route: "putio.redirect"  
-After access granted, user will be redirected to "callback_route"
+Call the previous created route (putio.redirect) .
+After access granted, user will be redirected to previous configured "callback_route" parameter
 
 ### retrieving the token
 Once token obtained, "events.putio.token" event is dispatched.  
