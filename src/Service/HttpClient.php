@@ -2,8 +2,18 @@
 
 namespace Gpenverne\PutioDriveBundle\Service;
 
+use GuzzleHttp\Client;
+
 class HttpClient
 {
+    /**
+     * @param Client $client
+     */
+    public function __construct(Client $client)
+    {
+        $this->client = $client;
+    }
+
     /**
      * @param string $url
      *
