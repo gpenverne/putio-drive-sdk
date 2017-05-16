@@ -19,7 +19,8 @@
         "symfony/class-loader": "*",
         "symfony/dependency-injection": "*",
         "nicoswd/putio": "*",
-        "gpenverne/psr-cloud-files": "dev-master"
+        "gpenverne/psr-cloud-files": "dev-master",
+        "guzzlehttp/guzzle": "~6.0"
     },
     "require-dev": {
         "phpspec/phpspec": "^3.2",
