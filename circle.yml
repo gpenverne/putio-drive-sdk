@@ -1,8 +1,9 @@
 machine:
     environment:
         SYMFONY_ENV: test
-
 dependencies:
+    pre:
+        - echo "date.timezone = Europe/Berlin" >> /opt/circleci/php/$(phpenv global)/etc/php.ini
     cache_directories:
         - vendor
 
