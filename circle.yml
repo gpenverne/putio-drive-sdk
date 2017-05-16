@@ -6,7 +6,7 @@ dependencies:
         - echo "date.timezone = Europe/Berlin" >> /opt/circleci/php/$(phpenv global)/etc/php.ini
     cache_directories:
         - vendor
-
+        - ~/.composer/cache
 test:
     override:
         - composer validate
