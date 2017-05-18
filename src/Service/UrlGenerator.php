@@ -5,6 +5,9 @@ namespace Gpenverne\PutioDriveBundle\Service;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\Router;
 
+/**
+ * @see https://put.io/v2/docs/gettingstarted.html#obtain-an-access-token-oauth-token
+ */
 class UrlGenerator
 {
     const CODE_PARAMETER = 'code';
@@ -40,16 +43,30 @@ class UrlGenerator
     {
         $url = 'https://api.put.io/v2/oauth2/authenticate?client_id=%s&response_type=code&redirect_uri=%s';
 
-        return sprintf($url, $this->params['client_id'], urlencode($this->params['redirect_uri']));
+        return sprintf($url, $this->params['client_id'], $this->params['redirect_uri']);
     }
 
     /**
      * @return string
      */
-    public function getTokenUrl($code)
+    public function getTokenUrl()
     {
-        $url = 'https://api.put.io/v2/oauth2/access_token?client_id=%s&client_secret=%s&grant_type=authorization_code&code=%s&redirect_uri=%s';
+        return 'https://api.put.io/v2/oauth2/access_token';
+    }
 
-        return sprintf($url, $this->params['client_id'], $this->params['client_secret'], $code, urlencode($this->params['redirect_uri']));
+    /**
+     * @param string $code
+     *
+     * @return array
+     */
+    public function getTokenUrlParameters($code)
+    {
+        return [
+            'client_id' => $this->params['client_id'],
+            'client_secret' => $this->params['client_secret'],
+            'grant_type' => 'authorization_code',
+            'code' => $code,
+            'redirect_uri' => $this->params['redirect_uri'],
+        ];
     }
 }

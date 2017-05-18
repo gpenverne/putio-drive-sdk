@@ -17,7 +17,7 @@ services:
     putio.drive.http_client:
         class: Gpenverne\PutioDriveBundle\Service\HttpClient
         arguments:
-            - "@put.guzzle.client"
+            - "@putio.guzzle.client"
     putio.drive.url_generator:
         class: Gpenverne\PutioDriveBundle\Service\UrlGenerator
         arguments:
@@ -51,7 +51,7 @@ services:
             - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest, priority: 0 }
 
     # -- external
-    put.guzzle.client:
+    putio.guzzle.client:
         class: GuzzleHttp\Client
     psr_cloud_files.factory.folder:
         class: Gpenverne\PsrCloudFiles\Factories\FolderFactory

@@ -22,7 +22,7 @@ class HttpClientSpec extends ObjectBehavior
 
     public function it_makes_get_request_using_guzzle_client(StreamInterface $stream, RequestInterface $request, $client)
     {
-        $client->request('GET', 'some-url', ['headers' => ['Accept' => 'application/json']])->willReturn($request)->shouldBeCalled();
+        $client->request('GET', 'some-url', ['headers' => ['Accept' => 'application/json'], 'query' => []])->willReturn($request)->shouldBeCalled();
         $request->getBody()->willReturn($stream);
         $stream->getContents()->willReturn('Some content');
 
@@ -31,7 +31,7 @@ class HttpClientSpec extends ObjectBehavior
 
     public function it_makes_get_request_and_return_json(StreamInterface $stream, RequestInterface $request, $client)
     {
-        $client->request('GET', 'some-url', ['headers' => ['Accept' => 'application/json']])->willReturn($request)->shouldBeCalled();
+        $client->request('GET', 'some-url', ['headers' => ['Accept' => 'application/json'], 'query' => []])->willReturn($request)->shouldBeCalled();
         $request->getBody()->willReturn($stream);
         $stream->getContents()->willReturn('"some json content"');
 

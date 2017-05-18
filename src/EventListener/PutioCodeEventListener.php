@@ -61,8 +61,10 @@ class PutioCodeEventListener
      */
     public function getToken($code)
     {
-        $url = $this->urlGenerator->getTokenUrl($code);
-        $data = $this->httpClient->getJson($url);
+        $url = $this->urlGenerator->getTokenUrl();
+        $parameters = $this->urlGenerator->getTokenUrlParameters($code);
+
+        $data = $this->httpClient->getJson($url, $parameters);
 
         if (null === $data || !is_object($data) || !isset($data->access_token)) {
             $result = $data;

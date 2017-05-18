@@ -24,8 +24,9 @@ class PutioCodeEventListenerSpec extends ObjectBehavior
         $tokenStd->access_token = 'a-token';
 
         $event->getCode()->willReturn('a-code');
-        $urlGenerator->getTokenUrl('a-code')->willReturn('an-url');
-        $httpClient->getJson('an-url')->willReturn($tokenStd);
+        $urlGenerator->getTokenUrl()->willReturn('an-url');
+        $urlGenerator->getTokenUrlParameters('a-code')->willReturn(['some-parameters']);
+        $httpClient->getJson('an-url', ['some-parameters'])->willReturn($tokenStd);
 
         $this->beConstructedWith($dispatcher, $urlGenerator, $httpClient);
     }
@@ -44,7 +45,7 @@ class PutioCodeEventListenerSpec extends ObjectBehavior
 
     public function it_throws_a_no_token_exception_if_no_token_found($tokenStd, $event, $httpClient)
     {
-        $httpClient->getJson('an-url')->willReturn('something wrong');
+        $httpClient->getJson('an-url', ['some-parameters'])->willReturn('something wrong');
         $this->shouldThrow(NoTokenFoundException::class)->duringGetToken('a-code');
     }
 }

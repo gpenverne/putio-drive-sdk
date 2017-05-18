@@ -32,9 +32,9 @@ class HttpClient
      *
      * @return mixed
      */
-    public function getJson($url)
+    public function getJson($url, $parameters = [])
     {
-        $res = $this->getResponse($url);
+        $res = $this->getResponse($url, 'GET', $parameters);
 
         return json_decode($res->getBody()->getContents());
     }
@@ -47,10 +47,11 @@ class HttpClient
      *
      * @return StreamInterface
      */
-    private function getResponse($url, $method = 'GET')
+    private function getResponse($url, $method = 'GET', $parameters = [])
     {
         return $this->client->request($method, $url, [
             'headers' => $this->getDefaultHeaders(),
+            'query' => $parameters,
         ]);
     }
 
