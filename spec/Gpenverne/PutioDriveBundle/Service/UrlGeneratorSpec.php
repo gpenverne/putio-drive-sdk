@@ -23,7 +23,7 @@ class UrlGeneratorSpec extends ObjectBehavior
 
     public function it_returns_a_redirect_url()
     {
-        $url = urlencode('http://a-full-url');
+        $url = 'http://a-full-url';
 
         $this->getRedirectUrl()->shouldReturn(
             sprintf('https://api.put.io/v2/oauth2/authenticate?client_id=a-client-id&response_type=code&redirect_uri=%s', $url)
@@ -32,6 +32,17 @@ class UrlGeneratorSpec extends ObjectBehavior
 
     public function it_returns_a_token_url()
     {
-        $this->getTokenUrl('a-code')->shouldReturn('https://api.put.io/v2/oauth2/access_token?client_id=a-client-id&client_secret=a-client-secret&grant_type=authorization_code&code=a-code&redirect_uri=http%3A%2F%2Fa-full-url');
+        $this->getTokenUrl()->shouldReturn('https://api.put.io/v2/oauth2/access_token');
+    }
+
+    public function it_returns_token_url_parameters()
+    {
+        $this->getTokenUrlParameters('some-code')->shouldReturn([
+            'client_id' => 'a-client-id',
+            'client_secret' => 'a-client-secret',
+            'grant_type' => 'authorization_code',
+            'code' => 'some-code',
+            'redirect_uri' => 'http://a-full-url',
+        ]);
     }
 }
