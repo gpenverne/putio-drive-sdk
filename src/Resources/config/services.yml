@@ -53,6 +53,8 @@ services:
     # -- external
     putio.guzzle.client:
         class: GuzzleHttp\Client
+        arguments:
+            - "%putio.guzzle.parameters%"
     psr_cloud_files.factory.folder:
         class: Gpenverne\PsrCloudFiles\Factories\FolderFactory
     psr_cloud_files.factory.file:

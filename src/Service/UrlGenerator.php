@@ -41,7 +41,7 @@ class UrlGenerator
      */
     public function getRedirectUrl()
     {
-        $url = 'https://api.put.io/v2/oauth2/authenticate?client_id=%s&response_type=code&redirect_uri=%s';
+        $url = 'authenticate?client_id=%s&response_type=code&redirect_uri=%s';
 
         return sprintf($url, $this->params['client_id'], $this->params['redirect_uri']);
     }
@@ -51,7 +51,7 @@ class UrlGenerator
      */
     public function getTokenUrl()
     {
-        return 'https://api.put.io/v2/oauth2/access_token';
+        return '/access_token';
     }
 
     /**
