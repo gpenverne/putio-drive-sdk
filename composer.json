@@ -18,7 +18,7 @@
         "symfony/config": "*",
         "symfony/class-loader": "*",
         "symfony/dependency-injection": "*",
-        "nicoswd/putio": "*",
+        "nicoswd/putio": "0.3.*",
         "gpenverne/psr-cloud-files": "dev-master",
         "guzzlehttp/guzzle": "~6.0"
     },
