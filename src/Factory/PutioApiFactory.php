@@ -81,12 +81,18 @@ class PutioApiFactory extends Provider
      */
     public function findByPath($path)
     {
-        $item = parent::findByPath($path);
-        if ($item && $item->isFolder()) {
-            $this->loadFolder($item);
+        $paths = explode('/', $path);
+        array_shift($paths);
+        $folder = $this->getRootFolder();
+        foreach ($paths as $subpath) {
+            if (($folder = $folder->findByPath($subpath)) && $folder->isFolder()) {
+                $this->loadFolder($folder);
+            } else {
+                break;
+            }
         }
 
-        return $item;
+        return parent::findByPath($path);
     }
 
     /**
